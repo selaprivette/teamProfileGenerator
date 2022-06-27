@@ -1,10 +1,11 @@
+//require paths
 const { prompt } = require("inquirer");
 const Manager = require("./lib/manager.js");
 const Engineer = require("./lib/engineer.js");
 const Intern = require("./lib/intern.js");
 const questions = require('./lib/questions.js');
 const fs = require('fs');
-
+//start function
 const init = async () => {
     let enterAnother = false;
     let employees = [];
@@ -24,7 +25,7 @@ const init = async () => {
  createHtml(employees);
 };
 init();
-
+//overwrite html each entry
 const createHtml = employees => {
     let theHTML=fs.readFileSync("./src/index.html", "utf8");
     
@@ -43,13 +44,13 @@ const createHtml = employees => {
             <p>Email: <a href="mailto:${employee.email}">${employee.email}</a></p>
             <p>***</p>
         </div>`
-        if(employee.role=="engineer"){card=card.replace("***","Github: "+employee.github)
-        } else {card=card.replace("***","Github: "+employee.school)};
+        if(employee.role=="engineer"){card=card.replace("***","Github: <a href=https://github.com/"+employee.github+" target='_blank'>"+employee.github+"</a>")
+        } else {card=card.replace("***","School: "+employee.school)};
         cards+=card
     }
 
     theHTML=theHTML.replace("~~~cards~~~",cards)
-
+    //html to output
     fs.writeFile("./output/index.html", theHTML, (err) => {
         if (err) console.log(err);
     });
