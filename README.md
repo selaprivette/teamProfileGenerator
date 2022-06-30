@@ -11,11 +11,12 @@ This application creates an HTML page based off the information the user fills o
 
 
 ## Visuals
-![Team Profile Generator](imgs/.png)
+![Team Profile Generator](imgs/terminal.png)
+![Video] (img/walkthrough.mp4)
 
 
 
 ## Resources
-- [Video Link] ()
+- [VideoLink] (https://www.awesomescreenshot.com/video/9739072?key=cca9f716a42ba14cd15869447c2766c7)
 - [Repository](https://github.com/selaprivette/teamProfileGenerator)
 
